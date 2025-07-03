@@ -1,0 +1,75 @@
+{
+  "name": "@google/gemini-cli-plugins",
+  "version": "1.0.0",
+  "description": "Plugin marketplace system for Gemini CLI",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint . --ext .ts",
+    "format": "prettier --write .",
+    "validate": "node scripts/validate-plugins.js",
+    "create-template": "node scripts/create-plugin-template.js"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "semver": "^7.5.4",
+    "yargs": "^17.7.2",
+    "chalk": "^5.3.0",
+    "ora": "^7.0.1",
+    "inquirer": "^9.2.12",
+    "fs-extra": "^11.2.0",
+    "glob": "^10.4.1",
+    "tar": "^6.2.0",
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/fs-extra": "^11.0.4",
+    "@types/tar": "^6.0.5",
+    "@types/inquirer": "^9.0.7",
+    "typescript": "^5.0.0",
+    "vitest": "^1.0.0",
+    "eslint": "^8.0.0",
+    "prettier": "^3.0.0"
+  },
+  "keywords": [
+    "gemini",
+    "cli",
+    "plugins",
+    "marketplace",
+    "extensions",
+    "tools",
+    "themes"
+  ],
+  "author": "Google Gemini CLI Team",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/google-gemini/gemini-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/google-gemini/gemini-cli/issues"
+  },
+  "homepage": "https://github.com/google-gemini/gemini-cli#readme",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "exports": {
+    ".": "./dist/index.js",
+    "./interface": "./dist/plugin-interface.js",
+    "./manager": "./dist/plugin-manager.js",
+    "./registry": "./dist/plugin-registry.js",
+    "./installer": "./dist/plugin-installer.js",
+    "./marketplace": "./dist/marketplace/marketplace-client.js",
+    "./commands": "./dist/commands/plugin-commands.js"
+  }
+} 
